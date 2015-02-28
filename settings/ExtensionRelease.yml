@@ -1,0 +1,5 @@
+NamelessCoder\TYPO3RepositoryGizzle:
+  NamelessCoder\TYPO3RepositoryGizzle\GizzlePlugins\ExtensionRepositoryReleasePlugin:
+    enabled: true
+    directory: /tmp/
+
