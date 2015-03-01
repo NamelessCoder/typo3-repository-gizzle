@@ -1,5 +1,4 @@
-TYPO3 GitHub Repository Releaser
-================================
+<img src="typo3-repository-gizzle-logo.svg" alt="TYPO3 GitHub Repository Releaser" style="width: 100%;" />
 
 This project allows any GitHub-hosted repository containing a TYPO3 CMS
 extension to be released to the official TYPO3 Extension Repository
