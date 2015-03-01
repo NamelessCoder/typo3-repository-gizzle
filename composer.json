@@ -1,4 +1,14 @@
 {
+    "name": "namelesscoder/typo3-repository-gizzle",
+    "description": "GitHub Webhook Listener which releases TYPO3 extensions to TER when tags are created",
+    "license": "MIT",
+    "keywords": ["php", "git", "github", "webhook", "hook", "plugin", "typo3", "release"],
+    "authors": [
+        {
+            "name": "Claus Due",
+            "email": "claus@namelesscoder.net"
+        }
+    ],
     "require": {
         "namelesscoder/gizzle": "~1.3",
         "namelesscoder/gizzle-typo3-plugins": "~1.1"
@@ -16,5 +26,4 @@
             "NamelessCoder\\TYPO3RepositoryGizzle\\Tests\\Unit\\": "tests/unit/"
         }
     }
-
 }
