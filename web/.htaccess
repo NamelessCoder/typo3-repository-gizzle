@@ -5,9 +5,14 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php [L]
 
 <IfModule authnz_external_module>
-	AuthType Basic
-	AuthName fake-protected
-	AuthBasicProvider external
-	AuthExternal fake
-	Require valid-user
+        SetEnvIf Request_URI "^.$" bypass
+        AuthType Basic
+        AuthName fake-protected
+        AuthBasicProvider external
+        AuthExternal fake
+        Require valid-user
+        Order Deny,Allow
+        Deny from all
+        Allow from env=bypass
+        Satisfy any
 </IfModule>
