@@ -39,6 +39,10 @@ Installation
    * If your GitHub repository is already named the same as your extension
      key you can leave out that part of the URL and use a shorter URL like
      `https://release.namelesscoder.net/user:password`.
+   * Alternatively, if you feel more comfortable with it and the endpoint
+     supports it, use `https://username:password@release.namelesscoder.net/my_extension`.
+     This method only works if the server supports the `authnz_external_module`
+     or corresponding external authentications - see below.
 5. Enter a "Secret". We use a fixed secret for now - enter the text `typo3rocks`.
 6. Leave the "Which events..." selectors as-is. We only need the `push` event.
 
@@ -61,6 +65,21 @@ to use a token solution both for the "Secret" that is currently fixed, as well
 as for the credentials that must be passed to TER. The former will be solved
 by creating an official GitHub Service but the latter will depend on work that
 has to be done on TER or even TYPO3 SSO itself.
+
+If your web server supports it (Apache does via `authnz_external_module`) then
+you can register an external authenticator (change/move the path if needed):
+
+```
+<IfModule authnz_external_module>
+    DefineExternalAuth fake environment /var/www/release.namelesscoder.net/fake-auth.sh
+</IfModule>
+```
+
+...which goes in your virtual host or root server configuration. The `fake-auth.sh`
+script is a dummy that allows any username and password to be authenticated -
+and if done this way, this project will instead read those (fake) credentials.
+This means you can specify the credentials to use when uploading to TER, as
+`https://username:password@release.namelesscoder.net/my_extension`.
 
 Usage
 -----

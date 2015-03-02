@@ -57,6 +57,9 @@ class ExtensionRepositoryReleasePlugin extends \NamelessCoder\GizzleTYPO3Plugins
 	 * @return array
 	 */
 	protected function readRequestUriParameters() {
+		if (FALSE === empty($_SERVER['PHP_AUTH_USER'])) {
+			return array($_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']);
+		}
 		return explode('/', trim($_SERVER['REQUEST_URI'], '/'));
 	}
 

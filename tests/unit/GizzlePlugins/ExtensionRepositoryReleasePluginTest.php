@@ -92,4 +92,19 @@ class ExtensionRepositoryReleasePluginTest extends \PHPUnit_Framework_TestCase {
 		unset($_SERVER['REQUEST_URI']);
 	}
 
+	/**
+	 * @return void
+	 */
+	public function testReadRequestUriParametersReturnsHttpAuthenticationIfSet() {
+		$instance = new ExtensionRepositoryReleasePlugin();
+		$method = new \ReflectionMethod($instance, 'readRequestUriParameters');
+		$method->setAccessible(TRUE);
+		$_SERVER['REQUEST_URI'] = '/foo/bar/';
+		$_SERVER['PHP_AUTH_USER'] = 'dummy';
+		$_SERVER['PHP_AUTH_PW'] = 'password';
+		$result = $method->invoke($instance);
+		$this->assertEquals(array('dummy', 'password'), $result);
+		unset($_SERVER['REQUEST_URI'], $_SERVER['PHP_AUTH_USER'], $_SERVER['PHP_AUTH_PW']);
+	}
+
 }
