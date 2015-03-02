@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>TYPO3 Extension Repository Releaser</title>
+                <style type="text/css">
+                        html { margin: auto; font-family: tahoma; color: #444444; line-height: 1.65em; }
+                        body { margin: 3em auto 3em auto; width: 700px; }
+                        #logo { width: 100%; display: block; }
+                        hr { display: block; height: 1px; border: 0; border-top: 1px solid #cccccc; margin: 0.5em 0 0.5em 0; padding: 0; }
+                        .lead { font-size: 175%; text-align: center; padding: 1em; background-color: #fcfcfc; border: 1px solid #dddddd; }
+                </style>
+        </head>
+        <body>
+                <img id="logo" src="typo3-repository-gizzle-logo.svg" alt="TYPO3 Extension Repository Releaser" />
+                <p class="lead">
+                        Release your TYPO3 extension from GitHub to TER
+                </p>
+                <hr />
+                <p>
+                        This mini-site is a service which lets you release a GitHub repository containing a TYPO3
+                        extension directly from GitHub to the TYPO3 Extension Repository (TER). New releases are made
+                        every time a new version is tagged on GitHub. <strong>Free to use</strong>.
+                </p>
+                <h4>Requirements</h4>
+                <ul>
+                        <li>A <strong>public</strong> GitHub repository containing your TYPO3 extension.</li>
+                </ul>
+                <h4>Installation</h4>
+                <ol>
+                        <li>Edit your repository's settings</li>
+                        <li>Locate the "Webhooks &amp; Services" tab</li>
+                        <li>Click "Add webhook"</li>
+                        <li>
+                                Enter in "URL": <code>https://release.namelesscoder.net/my_extension/username:password</code>.
+                                <ul>
+                                        <li><code>my_extension</code> is the lowercase underscored extension key to release.</li>
+                                        <li><code>username:password</code> is your credentials with permission to upload the extension.</li>
+                                </ul>
+                        </li>
+                        <li>Enter in "Secret": <code>typo3rocks</code></li>
+                        <li>Leave the "Events" selection as it is - this service only requires the <code>push</code> event.</li>
+                </ol>
+                <h4>Releasing</h4>
+                <p>
+                        This service <strong>does not automatically update the TYPO3 extension meta data</strong>. When you create new
+                        releases you must update your <code>ext_emconf.php</code> and possibly <code>composer.json</code> file and set
+                        the appropriate version number and stability. You can then commit these changes and use that commit as tag base.
+                </p>
+                <p>New releases can be made in any branch name - all that is needed is for you to create and push a new Git tag:</p>
+                <pre>git tag 1.2.3
+git push origin 1.2.3</pre>
+                <p>If all went well a small comment will be posted to GitHub and associated with the commit.</p>
+                <h4>Detailed feedback</h4>
+                <p>
+                        Under the "Webhooks &amp; Services" section in your repository's settings, click the
+                        <code>https://release.namelesscoder.net/...</code> webhook URL and a list of recent requests will be displayed.
+                        Click each request to inspect the data that GitHub sent and the response that this service returned.
+                </p>
+                <p>If any errors are reported from TER during upload (for example invalid constraints) you can view those errors there.</p>
+        </body>
+</html>
+
