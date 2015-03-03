@@ -183,16 +183,16 @@
         },
         {
             "name": "namelesscoder/typo3-repository-client",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/typo3-repository-client.git",
-                "reference": "0b8d42d50e5c96e48ea6cde28fce918c8bfa6bb0"
+                "reference": "d16c300bbaee80b6205ceecfa38b87521891f977"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/0b8d42d50e5c96e48ea6cde28fce918c8bfa6bb0",
-                "reference": "0b8d42d50e5c96e48ea6cde28fce918c8bfa6bb0",
+                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/d16c300bbaee80b6205ceecfa38b87521891f977",
+                "reference": "d16c300bbaee80b6205ceecfa38b87521891f977",
                 "shasum": ""
             },
             "require-dev": {
@@ -222,7 +222,7 @@
                 }
             ],
             "description": "Client for interacting with the official TYPO3 Extension Repository (TER). Contains API and CLI scripts.",
-            "time": "2015-02-28 16:14:49"
+            "time": "2015-03-02 21:34:50"
         },
         {
             "name": "symfony/yaml",
