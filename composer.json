@@ -14,7 +14,8 @@
         "namelesscoder/gizzle-typo3-plugins": "~1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "@stable"
+        "phpunit/phpunit": "@stable",
+        "satooshi/php-coveralls": "*"
     },
     "autoload": {
         "psr-4": {
