@@ -1,6 +1,9 @@
 <img src="https://release.namelesscoder.net/typo3-repository-gizzle-logo.svg"
      alt="TYPO3 GitHub Repository Releaser" style="width: 100%;" />
 
+[![Build Status](https://jenkins.fluidtypo3.org/buildStatus/icon?job=typo3-repository-gizzle)](https://jenkins.fluidtypo3.org/job/typo3-repository-gizzle/) [![Coverage Status](https://img.shields.io/coveralls/NamelessCoder/typo3-repository-gizzle.svg)](https://coveralls.io/r/NamelessCoder/typo3-repository-gizzle)
+
+
 This project allows any GitHub-hosted repository containing a TYPO3 CMS
 extension to be released to the official TYPO3 Extension Repository
 (hereafter referred to as TER) by adding a very simple GitHub web hook.
