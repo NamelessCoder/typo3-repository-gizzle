@@ -2,4 +2,6 @@ NamelessCoder\TYPO3RepositoryGizzle:
   NamelessCoder\TYPO3RepositoryGizzle\GizzlePlugins\ExtensionRepositoryReleasePlugin:
     enabled: true
     directory: /tmp/
-
+    onFinish:
+      NamelessCoder\Gizzle\GizzlePlugins\CommentPlugin:
+        commit: true
