@@ -2,11 +2,12 @@
 namespace NamelessCoder\TYPO3RepositoryGizzle\GizzlePlugins;
 
 use NamelessCoder\Gizzle\Payload;
+use NamelessCoder\GizzleTYPO3Plugins\GizzlePlugins\ExtensionRepositoryReleasePlugin as BaseExtensionRepositoryReleasePlugin;
 
 /**
  * Class ExtensionRepositoryReleasePlugin
  */
-class ExtensionRepositoryReleasePlugin extends \NamelessCoder\GizzleTYPO3Plugins\GizzlePlugins\ExtensionRepositoryReleasePlugin {
+class ExtensionRepositoryReleasePlugin extends BaseExtensionRepositoryReleasePlugin {
 
 	/**
 	 * Validates the credentials "file" - by inspecting
